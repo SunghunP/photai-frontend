@@ -21,5 +21,4 @@ function App() {
   );
 }
 
-console.log("Testing git branches")
 export default App;
