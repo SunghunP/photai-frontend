@@ -1,3 +1,12 @@
+require('dotenv').config();
+
 export default function Home() {
-  return <div>This is the Home Page</div>
+
+  const URL = process.env.URL
+
+  return (
+    <div>
+      <button>  </button>
+    </div>
+  )
 }
