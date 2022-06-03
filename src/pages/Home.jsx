@@ -1,12 +1,12 @@
-require('dotenv').config();
-
 export default function Home() {
 
-  const URL = process.env.URL
+  const URL = `https://pho-tai.herokuapp.com/`
+
+  // write get menu items function to get items from backend
 
   return (
     <div>
-      <button>  </button>
+      <button></button>
     </div>
   )
 }

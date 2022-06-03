@@ -1,3 +1,14 @@
 export default function Menu() {
-  return <div>This is the Menu Page</div>
+  const menuItems = null
+
+  function loading() {
+    return <h1>loading...</h1>
+  }
+
+  function loaded() {
+    return <h1>hi</h1>
+  }
+
+  return <div> {menuItems ? loading() : loaded()}</div>
+  
 }
