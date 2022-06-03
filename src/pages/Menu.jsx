@@ -10,5 +10,4 @@ export default function Menu() {
   }
 
   return <div> {menuItems ? loading() : loaded()}</div>
-  
 }
