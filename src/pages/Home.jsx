@@ -1,7 +1,7 @@
-export default function Home() {
+export default function Home({ menu, setMenu }) {
 
-  const URL = `https://pho-tai.herokuapp.com/`
 
+  
   // write get menu items function to get items from backend
 
   return (
