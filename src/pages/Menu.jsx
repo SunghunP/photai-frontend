@@ -1,13 +1,20 @@
-export default function Menu() {
-  const menuItems = null
+import MenuItem from "../components/MenuItem";
+
+export default function Menu({ menu }) {
 
   function loading() {
-    return <h1>loading...</h1>
-  }
+    return <h1>Loading...</h1>
+  };
 
   function loaded() {
-    return <h1>hi</h1>
-  }
+    return (
+      <>
+        {menu.map((menuItem) => 
+          <MenuItem id={menuItem._id} name={menuItem.name} />
+        )}
+      </>
+    )
+  };
 
-  return <div> {menuItems ? loading() : loaded()}</div>
+  return <div> {menu ? loaded() : loading()}</div>
 }
