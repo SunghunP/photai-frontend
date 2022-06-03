@@ -15,6 +15,7 @@
   "scripts": {
     "start": "CI= react-scripts start",
     "build": "CI='' react-scripts build",
+    "dev": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

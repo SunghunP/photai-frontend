@@ -1,7 +1,7 @@
 import './App.css';
 // Import components 
 import Header from './components/Header';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
@@ -16,13 +16,16 @@ function App() {
 
   async function getMenu() {
     try {
-      const data = await fetch(MENU_URL)
-        .then((response) => response.json());
-      setMenu(menu);
+      const data = await fetch(MENU_URL).then(res => res.json());
+      setMenu(data);
     } catch (err) {
-      console.log(err)
-    }
-  }
+      console.log(err);
+    };
+  };
+
+  useEffect(() => {
+    getMenu();
+  }, [menu]);
 
   return (
     <div className="App">
@@ -30,12 +33,7 @@ function App() {
       <Routes>
         <Route 
           path="/" 
-          element={
-            <Home 
-            menu={menu} 
-            setMenu={setMenu}
-            getMenu={getMenu}/>
-          } 
+          element={<Home menu={menu}/>} 
         />
         <Route path="/menu" element={<Menu menu={menu}/>} />
         <Route path="/contact" element={<Contact />}/>
