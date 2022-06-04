@@ -8,11 +8,20 @@ export default function Menu({ menu }) {
 
   function loaded() {
     return (
-      <>
-        {menu.map((menuItem) => 
-          <MenuItem id={menuItem._id} name={menuItem.name} />
+      <div>
+        {menu.map((menuItem, idx) => 
+          <MenuItem 
+            key={menuItem._id}
+            idx={idx}
+            menuItemTag={menuItem.menuItemTag}
+            name={menuItem.name} 
+            englishName={menuItem.englishName}
+            desc={menuItem.desc}
+            price={menuItem.price}
+            foodType={menuItem.foodType}
+          />
         )}
-      </>
+      </div>
     )
   };
 
