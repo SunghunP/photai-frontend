@@ -11,7 +11,9 @@ import woodbg from './images/woodbg.png';
 
 function App() {
   const [ menu, setMenu ] = useState(null);
-  const MENU_URL = `https://pho-tai.herokuapp.com/menu`
+  const [ menuItemsByFoodType, setMenuItemsByFoodType] = useState(null);
+
+  const MENU_URL = `https://pho-tai.herokuapp.com/menu/`
 
   async function getMenu() {
     try {
@@ -21,6 +23,15 @@ function App() {
       console.log(err);
     };
   };
+
+  async function getMenuItemsByFoodType(foodType) {
+    try {
+      const data = await fetch(MENU_URL + 'foodtype/' + foodType).then(res => res.json());
+      setMenuItemsByFoodType(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   useEffect(() => {
     getMenu();
@@ -34,7 +45,14 @@ function App() {
           path="/" 
           element={<Home menu={menu}/>} 
         />
-        <Route path="/menu" element={<Menu menu={menu}/>} />
+        <Route 
+          path="/menu" 
+          element={<Menu 
+            menu={menu}  
+            getMenuItemsByFoodType={getMenuItemsByFoodType}
+            menuItemsByFoodType={menuItemsByFoodType}
+          />} 
+        />
         <Route path="/contact" element={<Contact />}/>
         <Route path="/about" element={<About />}/>
         <Route path="/edit" element={<Edit setMenu={setMenu}/>}/>
