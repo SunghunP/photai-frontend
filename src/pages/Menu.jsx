@@ -11,15 +11,20 @@ export default function Menu({ menu, getMenuItemsByFoodType, menuItemsByFoodType
   function loaded() {
     return (
       <div>
-        {menuMap()}
+        {menuItems.map((element) => {
+          return <div>
+            <h1>{element.toUpperCase()}</h1>
+            {menuMap(element)}
+            </div>
+        })}
       </div>
     )
   };
 
-  function menuMap() {
+  function menuMap(element) {
     return (
       <div className="menu">
-        {menu.filter(item => item.foodType === menuItems[0]).map((menuItem, idx) =>
+        {menu.filter(menuItem => menuItem.foodType === element).map((menuItem, idx) =>
           <MenuItem 
             key={menuItem._id}
             idx={idx}
