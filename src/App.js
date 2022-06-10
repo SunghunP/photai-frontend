@@ -7,7 +7,7 @@ import Menu from './pages/Menu';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Edit from './pages/Edit';
-
+import woodbg from './images/woodbg.png';
 
 function App() {
   const [ menu, setMenu ] = useState(null);
@@ -24,11 +24,11 @@ function App() {
 
   useEffect(() => {
     getMenu();
-  }, [menu]);
+  }, []);
 
   return (
     <div className="App">
-      <Header />
+      <Header woodbg={woodbg} />
       <Routes>
         <Route 
           path="/" 
@@ -36,7 +36,7 @@ function App() {
         />
         <Route path="/menu" element={<Menu menu={menu}/>} />
         <Route path="/contact" element={<Contact />}/>
-        <Route path="/about" element={<About/>}/>
+        <Route path="/about" element={<About />}/>
         <Route path="/edit" element={<Edit setMenu={setMenu}/>}/>
       </Routes>
     </div>
