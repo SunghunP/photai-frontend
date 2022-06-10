@@ -10,9 +10,9 @@ export default function Menu({ menu, getMenuItemsByFoodType, menuItemsByFoodType
 
   function loaded() {
     return (
-      <div>
-        {menuItems.map((element) => {
-          return <div>
+      <div className="menu-sections">
+        {menuItems.map((element, index) => {
+          return <div className={element} key={index + element}>
             <h1>{element.toUpperCase()}</h1>
             {menuMap(element)}
             </div>
@@ -23,7 +23,7 @@ export default function Menu({ menu, getMenuItemsByFoodType, menuItemsByFoodType
 
   function menuMap(element) {
     return (
-      <div className="menu">
+      <>
         {menu.filter(menuItem => menuItem.foodType === element).map((menuItem, idx) =>
           <MenuItem 
             key={menuItem._id}
@@ -37,9 +37,9 @@ export default function Menu({ menu, getMenuItemsByFoodType, menuItemsByFoodType
             foodtype={menuItem.foodType}
           />
         )}
-      </div>
+      </>
     )
   };
 
-  return <div> {menu ? loaded() : loading()}</div>
+  return <>{menu ? loaded() : loading()}</>
 }
