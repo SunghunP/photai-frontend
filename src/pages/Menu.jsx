@@ -1,6 +1,6 @@
 import MenuItem from "../components/MenuItem";
 
-export default function Menu({ menu, getMenuItemsByFoodType, menuItemsByFoodType }) {
+export default function Menu({ menu }) {
 
   function loading() {
     return <h1>Loading...</h1>
