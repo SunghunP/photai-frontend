@@ -41,21 +41,21 @@ const StyledMapView = styled.div`
 export default function Home({ menu, setMenu, mainBgBamboo, placeholder, bambooBg }) {
   return (
     <>
-    <StyledMainContainer bg={mainBgBamboo}>
-      <StyledContainer>
-        <GridWrapper>
-          <div className="img-cntr">
-            <img className="home-soup-image" src={woodbg} alt="piece of wood"></img>
-          </div>
-          <div className="main-page-desc">
-            <h1>Pho Tai Puyallup</h1>
-            <p>Hello this is a p tag and this is used to describe some of the great food that pho tai has blah blah blah babel babel this is a test to see how a lot of text makes my box container look</p>
-          </div>
-        </GridWrapper>
-      </StyledContainer>
-      <Carousel placeholder={placeholder}/>
-    </StyledMainContainer>
-    <StyledMapView bg={bambooBg} >This is the google maps</StyledMapView>
+      <StyledMainContainer bg={mainBgBamboo}>
+        <StyledContainer>
+          <GridWrapper>
+            <div className="img-cntr">
+              <img className="home-soup-image" src={woodbg} alt="piece of wood"></img>
+            </div>
+            <div className="main-page-desc">
+              <h1>Pho Tai Puyallup</h1>
+              <p>Hello this is a p tag and this is used to describe some of the great food that pho tai has blah blah blah babel babel this is a test to see how a lot of text makes my box container look</p>
+            </div>
+          </GridWrapper>
+        </StyledContainer>
+        <Carousel placeholder={placeholder} />
+      </StyledMainContainer>
+      <StyledMapView bg={bambooBg} >This is the google maps</StyledMapView>
     </>
   )
 }

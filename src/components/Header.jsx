@@ -17,7 +17,7 @@ const StyledNav = styled.nav`
   }
 `
 
-export default function Header({woodbg}) {
+export default function Header({ woodbg }) {
   return (
     <StyledNav bg={woodbg}>
       <Link to="/">Pho Tai Puyallup</Link>

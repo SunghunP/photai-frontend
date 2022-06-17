@@ -30,11 +30,11 @@ const StyledCarousel = styled.div`
   }
 `;
 
-export default function Carousel ({ placeholder }) {
+export default function Carousel({ placeholder }) {
   const [active, setActive] = useState(true);
   const [id, setId] = useState(1);
 
-  function handleClick (e) {
+  function handleClick(e) {
     if (e.target.className === '>') {
       if (id >= 5) {
         setId(1);
@@ -52,11 +52,11 @@ export default function Carousel ({ placeholder }) {
 
   return (
     <StyledCarousel onClick={handleClick}>
-      {foodImgArray.map(item => 
+      {foodImgArray.map(item =>
         <img hidden={active} src={item} alt="hello" />
       )}
       <button className='<'>{'<'}</button>
-      <div placeholder={placeholder}><img src={foodImgArray[id]}/></div>
+      <div placeholder={placeholder}><img src={foodImgArray[id]} /></div>
       <button className='>'>{'>'}</button>
     </StyledCarousel>
   );
