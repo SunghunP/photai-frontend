@@ -11,7 +11,8 @@ import woodbg from './images/woodbg.png';
 
 function App() {
   const [ menu, setMenu ] = useState(null);
-  const MENU_URL = `https://pho-tai.herokuapp.com/menu`
+
+  const MENU_URL = `https://pho-tai.herokuapp.com/menu/`
 
   async function getMenu() {
     try {
@@ -34,7 +35,12 @@ function App() {
           path="/" 
           element={<Home menu={menu}/>} 
         />
-        <Route path="/menu" element={<Menu menu={menu}/>} />
+        <Route 
+          path="/menu" 
+          element={<Menu 
+            menu={menu}  
+          />} 
+        />
         <Route path="/contact" element={<Contact />}/>
         <Route path="/about" element={<About />}/>
         <Route path="/edit" element={<Edit setMenu={setMenu}/>}/>

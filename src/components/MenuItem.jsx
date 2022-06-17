@@ -1,6 +1,6 @@
-export default function MenuItem({ idx, menuItemTag, name, englishName, desc, price, foodType}) {
+export default function MenuItem({ idx, itemNumber, menuItemTag, name, englishName, desc, price, foodtype}) {
   return <div className="menuItems">
-    <p key={idx} id={idx} foodType={foodType}>
+    <p key={idx} id={itemNumber} foodtype={foodtype}>
       {menuItemTag} {englishName} {name} {price}
     </p>
   </div>
