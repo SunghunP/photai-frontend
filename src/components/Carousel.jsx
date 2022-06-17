@@ -9,8 +9,8 @@ const StyledCarousel = styled.div`
   background: rgba(12, 12, 12, 0.05);
   div {
     img {
-      max-height: 500px;
-      width: 500px; 
+      max-height: 600px;
+      width: 600px; 
     }
   }
   button {
