@@ -8,7 +8,8 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Edit from './pages/Edit';
 import woodbg from './images/woodbg.png';
-
+import mainBgBamboo from './images/mainBgBamboo.png'
+import placeholder from './images/placeholder.jpg'
 function App() {
   const [ menu, setMenu ] = useState(null);
 
@@ -33,7 +34,7 @@ function App() {
       <Routes>
         <Route 
           path="/" 
-          element={<Home menu={menu}/>} 
+          element={<Home menu={menu} mainBgBamboo={mainBgBamboo} placeholder={placeholder} />} 
         />
         <Route 
           path="/menu" 
