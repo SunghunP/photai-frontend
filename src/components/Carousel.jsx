@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import foodImgArray from '../data/foodImgArray';
 
 const StyledCarousel = styled.div`
   display: flex;
@@ -32,6 +33,7 @@ const StyledCarousel = styled.div`
 export default function Carousel ({ placeholder }) {
   const [active, setActive] = useState(true);
   const [id, setId] = useState(1);
+
   function handleClick (e) {
     if (e.target.className === '>') {
       if (id >= 5) {
@@ -51,8 +53,11 @@ export default function Carousel ({ placeholder }) {
 
   return (
     <StyledCarousel onClick={handleClick}>
+      {foodImgArray.map(item => 
+        <img hidden={active} src={item} alt="hello" />
+      )}
       <button className='<'>{'<'}</button>
-      <div placeholder={placeholder}><img src={placeholder}/></div>
+      <div placeholder={placeholder}><img src={foodImgArray[id]}/></div>
       <button className='>'>{'>'}</button>
     </StyledCarousel>
   );
