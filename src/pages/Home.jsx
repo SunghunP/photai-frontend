@@ -8,7 +8,8 @@ const StyledMainContainer = styled.div`
   background-size: cover;
   background-position: center;
   max-width: inherit;
-`
+  font-family: 'Fredoka One', cursive;
+`;
 
 const StyledContainer = styled.div`
   margin: auto;
@@ -22,15 +23,24 @@ const StyledContainer = styled.div`
     width: 90%;
     border-radius: 85%;
   }
-`
+`;
 
 const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  h1{
+    font-family: 'Damion', cursive;
+  }
+`;
+
+const StyledMapView = styled.div`
+  background-image: url(${props => props.bg});
+  height: 100px;
 `
 
-export default function Home({ menu, setMenu, mainBgBamboo, placeholder }) {
+export default function Home({ menu, setMenu, mainBgBamboo, placeholder, bambooBg }) {
   return (
+    <>
     <StyledMainContainer bg={mainBgBamboo}>
       <StyledContainer>
         <GridWrapper>
@@ -44,8 +54,9 @@ export default function Home({ menu, setMenu, mainBgBamboo, placeholder }) {
         </GridWrapper>
       </StyledContainer>
       <Carousel placeholder={placeholder}/>
-      <div>This is the google maps</div>
     </StyledMainContainer>
+    <StyledMapView bg={bambooBg} >This is the google maps</StyledMapView>
+    </>
   )
 }
 

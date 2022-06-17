@@ -8,12 +8,14 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Edit from './pages/Edit';
 import woodbg from './images/woodbg.png';
-import mainBgBamboo from './images/mainBgBamboo.png'
-import placeholder from './images/placeholder.jpg'
+import mainBgBamboo from './images/mainBgBamboo.png';
+import placeholder from './images/placeholder.jpg';
+import bambooBg from './images/bambooBg.png';
+
 function App() {
   const [ menu, setMenu ] = useState(null);
 
-  const MENU_URL = `https://pho-tai.herokuapp.com/menu/`
+  const MENU_URL = `https://pho-tai.herokuapp.com/menu/`;
 
   async function getMenu() {
     try {
@@ -34,7 +36,12 @@ function App() {
       <Routes>
         <Route 
           path="/" 
-          element={<Home menu={menu} mainBgBamboo={mainBgBamboo} placeholder={placeholder} />} 
+          element={<Home 
+            menu={menu} 
+            mainBgBamboo={mainBgBamboo} 
+            placeholder={placeholder} 
+            bambooBg={bambooBg}
+          />} 
         />
         <Route 
           path="/menu" 
@@ -48,6 +55,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;

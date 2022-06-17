@@ -48,7 +48,6 @@ export default function Carousel ({ placeholder }) {
         setId(id - 1);
       }
     }
-    console.log(id);
   };
 
   return (
