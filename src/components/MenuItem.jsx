@@ -4,7 +4,7 @@ const StyledP = styled.p`
   font-size: 30px;
   background: rgba(40,40,40, 0.8);
   color: white; 
-  padding: 10px; 
+  padding: 15px; 
   border-radius: 100px;
   :hover {
     background: rgba(12,12,12, 1);
