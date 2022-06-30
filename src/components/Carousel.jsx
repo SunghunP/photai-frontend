@@ -4,45 +4,38 @@ import foodImgArray from '../data/foodImgArray';
 
 const StyledCarousel = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background: rgba(12, 12, 12, 0.05);
-  div {
-    img {
-      max-height: 600px;
-      width: 600px; 
-    }
-  }
-  button {
-    font-size: 75px;
-    font-weight: bold;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    :hover {
-      color: brown;
-    }
-  }
+  background: rgba(12, 12, 12, 0.3);
+  padding: 30px;
+`;
+
+const StyledImg = styled.img`
+  max-height: 150px;
+  max-width: 150px;
+  transition: all .3s 0s ease-in-out;
+  border-radius: 10%;
+  margin: 10px;
+  padding: 5px; 
+  
+  :hover { 
+    transform: scale(1.6);
+  } 
 `;
 
 export default function Carousel({ placeholder }) {
   const [active, setActive] = useState(true);
-  const [id, setId] = useState(1);
+  const [id, setId] = useState(0);
 
   function handleClick(e) {
     if (e.target.className === '>') {
       if (id >= 5) {
-        setId(1);
+        setId(0);
       } else {
         setId(id + 1);
       }
     } else if (e.target.className === '<') {
-      if (id <= 1) {
+      if (id <= 0) {
         setId(5);
       } else {
         setId(id - 1);
@@ -52,12 +45,11 @@ export default function Carousel({ placeholder }) {
 
   return (
     <StyledCarousel onClick={handleClick}>
-      {foodImgArray.map(item =>
-        <img hidden={active} src={item} alt="hello" />
-      )}
-      <button className='<'>{'<'}</button>
-      <div placeholder={placeholder}><img src={foodImgArray[id]} /></div>
-      <button className='>'>{'>'}</button>
+      <div>
+        {foodImgArray.map(item =>
+          <StyledImg src={item} alt="hello" />
+        )}
+      </div>
     </StyledCarousel>
   );
 };
