@@ -49,7 +49,7 @@ function App() {
           }
         />
         <Route path="/menu" element={<Menu menu={menu} forestBg={forestBg} />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact bambooBg={bambooBg}/>} />
         <Route path="/about" element={<About />} />
         <Route path="/edit" element={<Edit setMenu={setMenu} />} />
       </Routes>
