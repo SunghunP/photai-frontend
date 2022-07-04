@@ -2,6 +2,11 @@ import styled from "styled-components"
 import { useState } from "react";
 
 export default function Contact({ bambooBg }) {
+  const [form, setForm] = useState({
+    email: '',
+    subject: '',
+    msg: ''
+  })
   
   function handleChange(e) {
     setForm({
