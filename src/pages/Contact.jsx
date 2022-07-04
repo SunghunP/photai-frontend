@@ -2,7 +2,13 @@ import styled from "styled-components"
 import { useState } from "react";
 
 export default function Contact({ bambooBg }) {
-
+  
+  function handleChange(e) {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    })
+  }
   return <StyledContactPage className="contact" bg={bambooBg}>
     <h1>Have any questions or concerns?</h1>
     <StyledForm onChange={handleChange} onSubmit={sendEmail} >
