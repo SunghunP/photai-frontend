@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import emailjs from '@emailjs/browser';
 import { useState } from "react";
 
 export default function Contact({ bambooBg }) {
@@ -6,14 +7,31 @@ export default function Contact({ bambooBg }) {
     email: '',
     subject: '',
     msg: ''
-  })
-  
+  });
+
+  function sendEmail(e) {
+    e.preventDefault();
+    emailjs.send('service_p1iyac8', 'template_5bjuhsj', form, '6R44V0oeTGUcmR2Kc')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    setForm({
+      email:'',
+      subject: '',
+      msg: ''
+    })
+    alert("You're email has been sent!");
+  };
+
   function handleChange(e) {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     })
-  }
+  };
+
   return <StyledContactPage className="contact" bg={bambooBg}>
     <h1>Have any questions or concerns?</h1>
     <StyledForm onChange={handleChange} onSubmit={sendEmail} >
@@ -29,5 +47,4 @@ export default function Contact({ bambooBg }) {
       <button type="submit" value="Send">Submit</button>
     </StyledForm>
   </StyledContactPage>
-  // hi
 }
