@@ -2,6 +2,44 @@ import styled from "styled-components"
 import emailjs from '@emailjs/browser';
 import { useState } from "react";
 
+const StyledContactPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: 'Fredoka One', cursive;
+  background: url(${props => props.bg});
+  background-size: cover;
+  height: 65%;
+`
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial';
+  label {
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: 25px;
+  }
+  input, textarea, button{
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-family: 'serif';
+    font-Size: 20px;
+    border: 2px solid black;
+  }
+  button {
+    width: 100%;
+    font-family: 'Fredoka One', cursive;
+  }
+  .msg {
+    height: 300px;
+  }
+`
+
 export default function Contact({ bambooBg }) {
   const [form, setForm] = useState({
     email: '',
