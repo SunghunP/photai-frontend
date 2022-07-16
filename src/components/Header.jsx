@@ -22,8 +22,8 @@ export default function Header({ woodbg }) {
     <StyledNav bg={woodbg}>
       <Link to="/">Pho Tai Puyallup</Link>
       <Link to="/menu">MENU</Link>
-      <Link to="/about">Contact Us</Link>
-      <Link to="/contact">About Us</Link>
+      <Link to="/contact">Contact Us</Link>
+      <Link to="/about">About Us</Link>
     </StyledNav>
   )
 }

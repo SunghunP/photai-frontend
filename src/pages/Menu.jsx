@@ -12,7 +12,7 @@ const StyledMainDiv = styled.div`
   text-align: center; 
   background-image: url(${props => props.bg});
   background-size: cover;
-`
+`;
 
 const StyledItemsDiv = styled.div`
   h1 {
@@ -22,7 +22,7 @@ const StyledItemsDiv = styled.div`
     width: 750px;
     font-size: 50px;
   }
-`
+`;
 
 export default function Menu({ menu, forestBg }) {
 
