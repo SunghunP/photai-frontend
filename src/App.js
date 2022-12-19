@@ -18,7 +18,7 @@ import forestBg from "./images/forestBg.png";
 function App() {
   const [menu, setMenu] = useState(null);
 
-  const MENU_URL = `https://pho-tai.herokuapp.com/menu/`;
+  const MENU_URL = `https://pho-tai.onrender.com/menu/`;
 
   async function getMenu() {
     try {
