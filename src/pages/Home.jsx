@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from 'react';
-import woodbg from '../images/woodbg.png';
+import phoboy from '../images/phoboy.png';
 import Carousel from '../components/Carousel';
 
 const StyledMainContainer = styled.div`
@@ -9,6 +9,7 @@ const StyledMainContainer = styled.div`
   background-position: center;
   max-width: inherit;
   font-family: 'Fredoka One', cursive;
+  height: 100%;
 `;
 
 const StyledContainer = styled.div`
@@ -45,17 +46,19 @@ export default function Home({ menu, setMenu, mainBgBamboo, placeholder, bambooB
         <StyledContainer>
           <GridWrapper>
             <div className="img-cntr">
-              <img className="home-soup-image" src={woodbg} alt="piece of wood"></img>
+              <img className="home-soup-image" src={phoboy} alt="piece of wood"></img>
             </div>
             <div className="main-page-desc">
               <h1>Pho Tai Puyallup</h1>
-              <p>Hello this is a p tag and this is used to describe some of the great food that pho tai has blah blah blah babel babel this is a test to see how a lot of text makes my box container look</p>
+              <p>Located off South Meridian, our family owned restaurant has been serving the Puyallup community for over 15+ years.</p>
+              <p>Come in and try our piping hot Pho, tasty teriyaki and our delicious bubble tea!</p>
             </div>
           </GridWrapper>
         </StyledContainer>
         <Carousel placeholder={placeholder} />
       </StyledMainContainer>
-      <StyledMapView bg={bambooBg} >This is the google maps</StyledMapView>
+
+      <StyledMapView bg={bambooBg} >Footer</StyledMapView>
     </>
   )
 }
