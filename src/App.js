@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     getMenu();
-  }, []);
+  },[]);
 
   return (
     <div className="App">
