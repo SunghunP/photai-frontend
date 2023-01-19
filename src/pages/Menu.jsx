@@ -6,7 +6,6 @@ const StyledMainDiv = styled.div`
   font-family: 'Alata', sans-serif;
   display: flex;
   flex-direction: column;
-  width: 100%;
   align-items: center;
   justify-content: center;
   text-align: center; 
