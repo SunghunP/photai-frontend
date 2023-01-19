@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 const StyledNav = styled.nav`
-  width: 100%;
   height: 100px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
